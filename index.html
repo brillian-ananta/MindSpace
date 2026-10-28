@@ -216,24 +216,33 @@
             </div>
           </fieldset>
 
-          <div class="mood-extra">
+          
+<div class="mood-intensity">
+  <label for="mood-intensity">
+    Seberapa kuat perasaanmu?
+  </label>
 
-            <label for="mood-intensity">
-              Seberapa kuat perasaan ini?
-            </label>
+  <div class="intensity-value">
+    <output id="mood-intensity-value" for="mood-intensity">
+      3/5
+    </output>
+  </div>
 
-            <div class="range-row">
-              <span class="range-caption">Ringan</span>
-              <input
-                id="mood-intensity"
-                name="intensity"
-                type="range"
-                min="1"
-                max="5"
-                value="3">
-              <span class="range-caption">Kuat</span>
-              <output id="intensity-output" for="mood-intensity">3/5</output>
-            </div>
+  <input
+    type="range"
+    id="mood-intensity"
+    name="mood-intensity"
+    min="1"
+    max="5"
+    value="3"
+    step="1"
+  />
+
+  <div class="intensity-labels">
+    <span>Ringan</span>
+    <span>Sangat kuat</span>
+  </div>
+</div>
 
             <label for="mood-trigger">
               Apa yang mungkin memengaruhinya?
@@ -296,260 +305,6 @@
 
       </div>
     </section>
-
-  
-<!-- ==============================
-     KUESIONER REFLEKSI DIRI
-     ============================== -->
-
-<section class="questionnaire-section" id="kuesioner">
-  <div class="section-heading">
-    <span class="section-label">Kenali dirimu</span>
-    <h2>Bagaimana perasaanmu akhir-akhir ini?</h2>
-    <p>
-      Jawab pertanyaan berikut sesuai dengan apa yang kamu rasakan
-      selama dua minggu terakhir. Tidak ada jawaban benar atau salah.
-    </p>
-  </div>
-
-  <div class="questionnaire-layout">
-    <div class="questionnaire-panel">
-
-      <form class="questionnaire-form" id="questionnaire-form">
-
-        <p class="questionnaire-note">
-          Pilih satu jawaban untuk setiap pertanyaan.
-        </p>
-
-        <!-- Pertanyaan 1 -->
-        <fieldset class="question-item">
-          <legend>1. Seberapa sering kamu merasa sedih atau kehilangan semangat?</legend>
-
-          <label>
-            <input type="radio" name="q1" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q1" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q1" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q1" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 2 -->
-        <fieldset class="question-item">
-          <legend>2. Seberapa sering kamu merasa khawatir atau cemas berlebihan?</legend>
-
-          <label>
-            <input type="radio" name="q2" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q2" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q2" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q2" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 3 -->
-        <fieldset class="question-item">
-          <legend>3. Seberapa sering tugas sekolah atau masalah pribadi membuatmu kewalahan?</legend>
-
-          <label>
-            <input type="radio" name="q3" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q3" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q3" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q3" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 4 -->
-        <fieldset class="question-item">
-          <legend>4. Seberapa sering kamu mengalami kesulitan tidur atau beristirahat dengan nyaman?</legend>
-
-          <label>
-            <input type="radio" name="q4" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q4" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q4" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q4" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 5 -->
-        <fieldset class="question-item">
-          <legend>5. Seberapa sering kamu merasa kurang percaya diri atau membandingkan dirimu dengan orang lain?</legend>
-
-          <label>
-            <input type="radio" name="q5" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q5" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q5" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q5" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 6 -->
-        <fieldset class="question-item">
-          <legend>6. Seberapa sering kamu merasa kesulitan menceritakan masalah kepada orang yang kamu percaya?</legend>
-
-          <label>
-            <input type="radio" name="q6" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q6" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q6" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q6" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 7 -->
-        <fieldset class="question-item">
-          <legend>7. Seberapa sering kamu merasa sulit berkonsentrasi saat belajar atau melakukan kegiatan sehari-hari?</legend>
-
-          <label>
-            <input type="radio" name="q7" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q7" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q7" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q7" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <!-- Pertanyaan 8 -->
-        <fieldset class="question-item">
-          <legend>8. Seberapa sering kamu merasa membutuhkan dukungan tetapi tidak tahu harus meminta bantuan kepada siapa?</legend>
-
-          <label>
-            <input type="radio" name="q8" value="Tidak pernah" data-score="0" required>
-            Tidak pernah
-          </label>
-
-          <label>
-            <input type="radio" name="q8" value="Jarang" data-score="1">
-            Jarang
-          </label>
-
-          <label>
-            <input type="radio" name="q8" value="Sering" data-score="2">
-            Sering
-          </label>
-
-          <label>
-            <input type="radio" name="q8" value="Hampir setiap hari" data-score="3">
-            Hampir setiap hari
-          </label>
-        </fieldset>
-
-        <button type="submit" class="btn-primary">
-          Lihat Hasil Refleksi
-        </button>
-
-        <button type="reset" class="btn-secondary">
-          Ulangi Kuesioner
-        </button>
-
-      </form>
-
-      <!-- Hasil akan ditampilkan oleh JavaScript -->
-      <div
-        id="questionnaire-result"
-        class="questionnaire-result"
-        role="status"
-        aria-live="polite"
-        hidden
-      ></div>
-
-    </div>
-  </div>
-
-  <p class="questionnaire-disclaimer">
-    Catatan: Kuesioner ini hanya untuk refleksi diri dan bukan
-    alat diagnosis. Jika perasaan yang kamu alami terus mengganggu
-    aktivitas sehari-hari, pertimbangkan untuk berbicara dengan
-    guru BK, orang dewasa tepercaya, atau tenaga profesional.
-  </p>
-</section>
 
 <!-- ==============================
      KUESIONER REFLEKSI DIRI
