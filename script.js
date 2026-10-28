@@ -171,31 +171,53 @@ function initMoodCheckIn() {
 
     const history = getLocalData("mentalHealthMood", []);
 
-    history.unshift({
-      mood: selectedMood,
-      date: new Date().toLocaleString("id-ID")
-    });
+    const selectedFactors = [
+  ...form.querySelectorAll(
+    'input[name="moodFactors"]:checked'
+  )
+].map((input) => input.value);
 
-    if (!saveLocalData("mentalHealthMood", history.slice(0, 30))) {
-      return;
-    }
-
-    const advice =
-      moodAdvice[selectedMood.toLowerCase()] ||
-      "Terima perasaanmu tanpa menghakimi diri sendiri. Kamu boleh mengambil waktu untuk beristirahat.";
-
-    showMessage(result, `Terima kasih sudah berbagi. ${advice}`);
-
-    moodOptions.forEach((option) => {
-      option.classList.remove("is-selected");
-      option.setAttribute("aria-pressed", "false");
-    });
+history.unshift({
+  mood: selectedMood,
+  intensity: Number(
+    form.querySelector("#mood-intensity")?.value || 3
+  ),
+  factors: selectedFactors,
+  date: new Date().toLocaleString("id-ID")
+});
 
     selectedMood = "";
     renderMoodHistory();
   });
 
   renderMoodHistory();
+}
+
+
+function initMoodFactors() {
+  const factors = document.querySelectorAll(
+    'input[name="moodFactors"]'
+  );
+
+  const counter = document.querySelector(
+    ".factor-selection-count"
+  );
+
+  if (!factors.length || !counter) return;
+
+  function updateCounter() {
+    const selected = [...factors].filter(
+      (factor) => factor.checked
+    ).length;
+
+    counter.textContent = `${selected} faktor dipilih`;
+  }
+
+  factors.forEach((factor) => {
+    factor.addEventListener("change", updateCounter);
+  });
+
+  updateCounter();
 }
 
 // =========================================================
@@ -634,6 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initMoodCheckIn();
   initMoodIntensity();
+  initMoodFactors();
   initQuestionnaire();
   initBreathingExercise();
   initJournal();
