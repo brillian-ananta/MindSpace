@@ -2836,3 +2836,172 @@ legend {
     margin: 8px 0;
   }
 }
+
+
+/* ===================================
+   PILIHAN FAKTOR YANG MEMENGARUHI MOOD
+   =================================== */
+
+.mood-factors {
+  margin: 26px 0;
+}
+
+.mood-factors-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.mood-factors-heading h3 {
+  margin: 0 0 8px;
+  color: #302744;
+  font-size: 1.15rem;
+}
+
+.mood-factors-heading p {
+  margin: 0;
+  color: #82788f;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.optional-label {
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #f0eaff;
+  color: #7358b6;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.factor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.factor-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  min-height: 145px;
+  padding: 17px 15px;
+  overflow-wrap: anywhere;
+  background: #ffffff;
+  border: 1.5px solid #eee8f6;
+  border-radius: 17px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.factor-card:hover {
+  transform: translateY(-3px);
+  border-color: #c7b5f0;
+  box-shadow: 0 8px 20px rgba(112, 82, 173, 0.09);
+}
+
+/* Checkbox tetap dapat diakses melalui keyboard */
+.factor-card input[type="checkbox"] {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  accent-color: #8969d4;
+  cursor: pointer;
+}
+
+.factor-card:has(input:checked) {
+  background: #f4efff;
+  border-color: #9878df;
+  box-shadow: 0 5px 16px rgba(137, 105, 212, 0.12);
+}
+
+.factor-card:has(input:focus-visible) {
+  outline: 3px solid #c9b7f5;
+  outline-offset: 3px;
+}
+
+.factor-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: #f1ebff;
+  font-size: 1.35rem;
+}
+
+.factor-card:nth-child(3n + 2) .factor-icon {
+  background: #e7f8f0;
+}
+
+.factor-card:nth-child(3n + 3) .factor-icon {
+  background: #fff0e7;
+}
+
+.factor-title {
+  padding-right: 12px;
+  color: #342a46;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.factor-desc {
+  color: #81778d;
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.factor-selection-count {
+  margin: 14px 0 0;
+  color: #7b6b99;
+  font-size: 0.85rem;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .factor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* HP */
+@media (max-width: 450px) {
+  .factor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .factor-card {
+    min-height: 142px;
+    padding: 13px 11px;
+    border-radius: 14px;
+  }
+
+  .factor-title {
+    font-size: 0.85rem;
+  }
+
+  .factor-desc {
+    font-size: 0.73rem;
+  }
+
+  .factor-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+}
