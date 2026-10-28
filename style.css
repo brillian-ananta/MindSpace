@@ -2685,35 +2685,154 @@ legend {
   }
 }
 
+
+/* ==============================
+   KUESIONER REFLEKSI DIRI
+   ============================== */
+
 .questionnaire-section {
-   padding: 70px 20px;
+  padding: 70px 20px;
 }
 
 .questionnaire-section .section-heading {
-   max-width: 720px;
-   margin: 0 auto 32px;
-   text-align: center;
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
 }
 
 .questionnaire-section .section-heading h2 {
-   margin: 12px 0;
-   font-size: clamp(1.7rem, 4vw, 2.4rem);
-   color: var(--text-color, #29234b);
+  margin: 12px 0;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  color: var(--text-color, #29243b);
 }
 
-.questionnaire.section .section-heading p {
-   line-height: 1.7;
-   color: var(--muted-color, #777184);
+.questionnaire-section .section-heading p {
+  line-height: 1.7;
+  color: var(--muted-color, #777184);
 }
 
 .questionnaire-panel {
-   max-width: 760px;
-   margin: 0 auto;
-   padding: 28px;
-   background: var(--card-color, #fff);
-   border: 1px solid #eee8f7;
-   border-radius: 22px;
-   box-shadow: 0 12px 35px rgba(76, 52, 115, 0.08);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--card-color, #fff);
+  border: 1px solid #eee8f7;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(76, 52, 115, 0.08);
 }
 
-.questionnaire-note
+.questionnaire-note {
+  margin-bottom: 24px;
+  color: var(--muted-color, #777184);
+}
+
+.question-item {
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 20px;
+  border: 1px solid #e8e2f1;
+  border-radius: 16px;
+}
+
+.question-item legend {
+  max-width: 100%;
+  padding: 0 5px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-color, #29243b);
+}
+
+.question-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 13px;
+  padding: 12px;
+  border: 1px solid #eeeaf5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.question-item label:hover {
+  background: #f8f5ff;
+  border-color: #b9a5ec;
+}
+
+.question-item input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: #8970d6;
+}
+
+.question-item label:has(input:checked) {
+  background: #f0ebff;
+  border-color: #8970d6;
+}
+
+.questionnaire-form button {
+  margin: 8px 8px 0 0;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.questionnaire-form .btn-primary {
+  background: #8970d6;
+  color: white;
+}
+
+.questionnaire-form .btn-primary:hover {
+  background: #7156c2;
+}
+
+.questionnaire-form .btn-secondary {
+  background: #f0edf7;
+  color: #55486e;
+}
+
+.questionnaire-result {
+  margin-top: 24px;
+  padding: 20px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  background: #f3efff;
+  border-left: 4px solid #8970d6;
+  border-radius: 12px;
+  color: #39304f;
+}
+
+.questionnaire-result[hidden] {
+  display: none;
+}
+
+.questionnaire-disclaimer {
+  max-width: 760px;
+  margin: 24px auto 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--muted-color, #777184);
+}
+
+@media (max-width: 600px) {
+  .questionnaire-section {
+    padding: 45px 14px;
+  }
+
+  .questionnaire-panel {
+    padding: 16px;
+  }
+
+  .question-item {
+    padding: 14px;
+  }
+
+  .questionnaire-form button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
