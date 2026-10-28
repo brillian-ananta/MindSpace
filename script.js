@@ -318,6 +318,32 @@ function initQuestionnaire() {
   });
 }
 
+
+/* =================================
+   INTENSITAS MOOD
+   Memperbarui angka sesuai slider
+   ================================= */
+
+function initMoodIntensity() {
+  const slider = document.getElementById("mood-intensity");
+  const output = document.getElementById("mood-intensity-value");
+
+  if (!slider || !output) return;
+
+  function updateIntensity() {
+    const value = Number(slider.value);
+    output.textContent = `${value}/5`;
+    slider.setAttribute("aria-valuetext", `${value} dari 5`);
+  }
+
+  // Perbarui angka saat slider digeser.
+  slider.addEventListener("input", updateIntensity);
+  slider.addEventListener("change", updateIntensity);
+
+  // Tampilkan nilai awal yang benar.
+  updateIntensity();
+}
+
 // =========================================================
 // 5. LATIHAN PERNAPASAN
 // =========================================================
@@ -607,6 +633,7 @@ function initFooterYear() {
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initMoodCheckIn();
+  initMoodIntensity();
   initQuestionnaire();
   initBreathingExercise();
   initJournal();
