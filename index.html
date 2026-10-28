@@ -245,67 +245,109 @@
         </div>
           
 
-            <label for="mood-trigger">
-              Apa yang mungkin memengaruhinya?
-              <span class="optional-label">Opsional</span>
-            </label>
+           
+<!-- HAL YANG MEMENGARUHI MOOD -->
+<div class="mood-factors">
+  <div class="mood-factors-heading">
+    <div>
+      <h3>✨ Hal yang Memengaruhi Mood</h3>
+      <p>Apa yang sedang memengaruhi perasaanmu hari ini?</p>
+    </div>
+    <span class="optional-label">Bisa pilih beberapa</span>
+  </div>
 
-            <select id="mood-trigger" name="trigger">
-              <option value="">Pilih jika kamu mau</option>
-              <option value="sekolah">Sekolah atau tugas</option>
-              <option value="keluarga">Keluarga</option>
-              <option value="pertemanan">Pertemanan</option>
-              <option value="media-sosial">Media sosial</option>
-              <option value="istirahat">Tidur atau istirahat</option>
-              <option value="diri-sendiri">Pikiran tentang diri sendiri</option>
-              <option value="lainnya">Hal lainnya</option>
-            </select>
+  <div class="factor-grid">
 
-          </div>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Sekolah dan tugas">
+      <span class="factor-icon">📚</span>
+      <span class="factor-title">Sekolah & Tugas</span>
+      <span class="factor-desc">Ujian, PR, nilai, atau deadline</span>
+    </label>
 
-          <button class="button button-primary" type="submit">
-            Simpan check-in <span aria-hidden="true">→</span>
-          </button>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Keluarga">
+      <span class="factor-icon">🏡</span>
+      <span class="factor-title">Keluarga</span>
+      <span class="factor-desc">Situasi rumah atau orang tua</span>
+    </label>
 
-          <p class="form-feedback" id="mood-feedback" role="status" aria-live="polite"></p>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Teman dan pergaulan">
+      <span class="factor-icon">🫂</span>
+      <span class="factor-title">Teman</span>
+      <span class="factor-desc">Pertemanan atau lingkungan sosial</span>
+    </label>
 
-          <p class="privacy-note">
-            <span aria-hidden="true">🔒</span>
-            Catatan mood dirancang untuk disimpan di browser perangkatmu.
-          </p>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Hubungan romantis">
+      <span class="factor-icon">💗</span>
+      <span class="factor-title">Hubungan</span>
+      <span class="factor-desc">Pasangan atau seseorang yang disukai</span>
+    </label>
 
-        </form>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Diri sendiri dan kepercayaan diri">
+      <span class="factor-icon">🪞</span>
+      <span class="factor-title">Diri Sendiri</span>
+      <span class="factor-desc">Kepercayaan diri atau pikiran pribadi</span>
+    </label>
 
-        <!-- Riwayat mood -->
-        <div class="mood-history card">
-          <div class="card-heading">
-            <div>
-              <h3>Perjalanan mood-mu</h3>
-              <p>
-                Catatanmu membantu melihat pola, bukan memberi label pada dirimu.
-              </p>
-            </div>
-            <span class="small-badge">7 hari terakhir</span>
-          </div>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Kesehatan dan kondisi tubuh">
+      <span class="factor-icon">🌿</span>
+      <span class="factor-title">Kondisi Tubuh</span>
+      <span class="factor-desc">Kelelahan, sakit, atau kurang tidur</span>
+    </label>
 
-          <div
-            class="mood-chart-placeholder"
-            id="mood-chart"
-            aria-label="Grafik riwayat mood akan ditampilkan di sini">
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Media sosial">
+      <span class="factor-icon">📱</span>
+      <span class="factor-title">Media Sosial</span>
+      <span class="factor-desc">Konten, komentar, atau perbandingan</span>
+    </label>
 
-            <span class="placeholder-icon" aria-hidden="true">☁</span>
-            <p>Riwayat mood akan muncul setelah kamu membuat check-in.</p>
-          </div>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Keuangan">
+      <span class="factor-icon">💸</span>
+      <span class="factor-title">Keuangan</span>
+      <span class="factor-desc">Uang saku atau kebutuhan sehari-hari</span>
+    </label>
 
-          <ul
-            class="mood-history-list"
-            id="mood-history-list"
-            aria-label="Daftar catatan mood terbaru">
-          </ul>
-        </div>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Masa depan">
+      <span class="factor-icon">🌤️</span>
+      <span class="factor-title">Masa Depan</span>
+      <span class="factor-desc">Karier, kuliah, atau cita-cita</span>
+    </label>
 
-      </div>
-    </section>
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Aktivitas dan pekerjaan">
+      <span class="factor-icon">⏰</span>
+      <span class="factor-title">Kesibukan</span>
+      <span class="factor-desc">Jadwal padat atau kurang waktu luang</span>
+    </label>
+
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Kabar baik atau pencapaian">
+      <span class="factor-icon">🎉</span>
+      <span class="factor-title">Kabar Baik</span>
+      <span class="factor-desc">Pencapaian atau kejadian menyenangkan</span>
+    </label>
+
+    <label class="factor-card">
+      <input type="checkbox" name="moodFactors" value="Tidak tahu penyebabnya">
+      <span class="factor-icon">☁️</span>
+      <span class="factor-title">Belum Tahu</span>
+      <span class="factor-desc">Perasaan berubah tanpa alasan jelas</span>
+    </label>
+
+  </div>
+
+  <p class="factor-selection-count" aria-live="polite">
+    0 faktor dipilih
+  </p>
+</div>
 
 <!-- ==============================
      KUESIONER REFLEKSI DIRI
